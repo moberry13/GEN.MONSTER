@@ -1,0 +1,764 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f5f5f7;
+    --ink: #0a0a0a;
+    --muted: #7a7f87;
+    --accent: #a8b8c8;
+    --light: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== ССЫЛКИ: ВСЕ СОСТОЯНИЯ ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+a:link {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+a:active {
+    color: var(--ink);
+}
+
+/* Навигация: обычная и посещённая совпадают */
+.nav a:link,
+.nav a:visited,
+.footer-nav a:link,
+.footer-nav a:visited {
+    color: var(--muted);
+}
+
+.nav a:hover,
+.footer-nav a:hover {
+    color: var(--ink);
+}
+
+.nav a:active,
+.footer-nav a:active {
+    color: var(--accent);
+}
+
+em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 70px;
+    z-index: 100;
+    background-color: rgba(245, 245, 247, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 13px;
+    letter-spacing: 7px;
+    font-weight: 400;
+    color: var(--ink);
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav ul,
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li,
+.footer-nav li {
+    display: inline-block;
+}
+
+.nav a,
+.footer-nav a {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.footer-nav a:hover {
+    color: var(--ink);
+}
+
+/* ===== ОБЩИЙ КЛАСС ДЛЯ ЭКРАНОВ ===== */
+.screen {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 70px;
+    overflow: hidden;
+}
+
+.screen-content {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.screen-content.centered {
+    text-align: center;
+    max-width: 800px;
+}
+
+.screen-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 35px;
+}
+
+/* ===== ССЫЛКА СО СТРЕЛКОЙ ===== */
+.link-arrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: currentColor;
+    padding-bottom: 8px;
+    border-bottom: 1px solid currentColor;
+    transition: all 0.4s;
+}
+
+.link-arrow:hover {
+    letter-spacing: 5px;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ===== ЭКРАН 1: HERO ===== */
+.screen-hero {
+    color: #0a0a0a;
+}
+
+.bg-hero {
+    background: linear-gradient(160deg, #d8dee5 0%, #a8b8c8 100%);
+}
+
+.screen-hero .screen-content {
+    max-width: 950px;
+}
+
+.screen-hero h1 {
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -3px;
+    margin-bottom: 55px;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 2;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* ===== ЭКРАН 2: О БРЕНДЕ ===== */
+.screen-about {
+    background-color: var(--bg);
+}
+
+.screen-about h2 {
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 40px;
+}
+
+.screen-about .desc {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+/* ===== ЭКРАН 3: ФОТО НА ВЕСЬ ЭКРАН ===== */
+.bg-editorial {
+    background: linear-gradient(160deg, #c8d0d8 0%, #6a7078 100%);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 60px;
+    left: 70px;
+    color: #fff;
+    z-index: 2;
+}
+
+.image-caption .label {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+}
+
+.image-caption p {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+/* ===== ЭКРАН 4: ЦИФРЫ ===== */
+.screen-numbers {
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    text-align: center;
+}
+
+.number-value {
+    display: block;
+    font-size: 96px;
+    font-weight: 300;
+    letter-spacing: -4px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.number-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===== ЭКРАН 5: ПРЕИМУЩЕСТВА ===== */
+.screen-features {
+    background-color: var(--light);
+}
+
+.features-list {
+    margin-top: 40px;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+    padding: 45px 0;
+    border-top: 1px solid #e0e3e8;
+}
+
+.feature-row:last-child {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.feature-num {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+.feature-row h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.feature-row p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* ===== ЭКРАН 6: КАРТА ===== */
+.bg-map {
+    background: linear-gradient(160deg, #a8b0b8 0%, #2a2e33 100%);
+}
+
+.map-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 80px;
+    background-color: rgba(247, 246, 243, 0.92);
+    backdrop-filter: blur(15px);
+    max-width: 500px;
+}
+
+.map-overlay h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.map-address {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* ===== ЭКРАН 7: ФИНАЛ ===== */
+.screen-final {
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg);
+    padding: 140px 70px 0;
+}
+
+.screen-final .screen-content {
+    margin: auto;
+}
+
+.screen-final h2 {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 1px solid #e0e3e8;
+    margin-top: 100px;
+}
+
+.footer-brand {
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: var(--ink);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 35px;
+}
+
+.footer-nav a {
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--ink);
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+    .header {
+        padding: 25px 30px;
+    }
+    .nav {
+        gap: 20px;
+    }
+    .nav a {
+        font-size: 10px;
+    }
+    .screen {
+        padding: 100px 30px;
+    }
+    .screen-hero h1 {
+        font-size: 44px;
+    }
+    .screen-about h2 {
+        font-size: 32px;
+    }
+    .screen-final h2 {
+        font-size: 38px;
+    }
+    .numbers-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .number-value {
+        font-size: 64px;
+    }
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+/* ===== СТРАНИЦА «О КОМПАНИИ» ===== */
+
+/* Заголовок страницы */
+.screen-page-head {
+    min-height: 60vh;
+    padding-top: 180px;
+    align-items: flex-start;
+}
+
+.screen-page-head h1 {
+    font-size: 96px;
+    font-weight: 300;
+    letter-spacing: -4px;
+    line-height: 1;
+    margin-bottom: 35px;
+}
+
+.page-desc {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 550px;
+    line-height: 1.8;
+}
+
+/* Светлый label (для тёмного фона) */
+.label-light {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Сетка показателей — 3 колонки */
+.screen-numbers .numbers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 60px;
+}
+
+/* Контакты */
+.screen-contacts {
+    background-color: var(--light);
+}
+
+.screen-contacts h2 {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    margin-bottom: 70px;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    padding-top: 50px;
+    border-top: 1px solid #e0e3e8;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.contact-item p {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+.contact-item p a {
+    border-bottom: 1px solid currentColor;
+    transition: color 0.3s;
+}
+
+.contact-item p a:hover {
+    color: var(--accent);
+}
+
+/* ===== АДАПТИВ для about.html ===== */
+@media (max-width: 900px) {
+    .screen-page-head h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+    .screen-contacts h2 {
+        font-size: 32px;
+    }
+    .contacts-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .screen-numbers .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ===== СТРАНИЦА КАТАЛОГ ===== */
+
+.catalog {
+    padding: 80px 70px 140px;
+    background-color: var(--bg);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(160deg, #d8dee5 0%, #a8b8c8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.product:hover .product-image {
+    transform: scale(1.02);
+}
+
+.product-placeholder {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-cat {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.product h3 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.product-specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e3e8;
+}
+
+.product-specs li {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+    .catalog {
+        padding: 60px 30px 100px;
+    }
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+/* ===== СТРАНИЦА ПРАЙС-ЛИСТ ===== */
+
+.price {
+    padding: 60px 70px 140px;
+    background-color: var(--bg);
+}
+
+.price-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* Шапка таблицы */
+.price-table thead th {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    text-align: left;
+    padding: 22px 24px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.price-col {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Заголовки категорий */
+.row-category td {
+    background-color: #d8dee5;
+    color: #0a0a0a;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    font-weight: 500;
+}
+
+.row-services td {
+    background-color: #a8b8c8;
+}
+
+/* Обычные строки */
+.price-table tbody td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e3e8;
+    color: var(--ink);
+}
+
+.row-odd td {
+    background-color: #f5f5f7;
+}
+
+.row-even td {
+    background-color: #ffffff;
+}
+
+/* Акция */
+.row-promo td {
+    background-color: #0a0a0a;
+    color: #a8b8c8;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 22px 24px;
+}
+
+.row-promo .price-col {
+    font-size: 18px;
+    font-weight: 500;
+    color: #a8b8c8;
+}
+
+/* Примечание */
+.price-note {
+    margin-top: 25px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+/* Hover по строкам */
+.price-table tbody tr:not(.row-category):not(.row-promo):hover td {
+    background-color: #eef1f5;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+    .price {
+        padding: 40px 20px 100px;
+    }
+    .price-table {
+        font-size: 12px;
+    }
+    .price-table thead th,
+    .price-table tbody td {
+        padding: 14px 12px;
+    }
+    .price-table thead th:nth-child(3),
+    .price-table tbody td:nth-child(3) {
+        display: none;
+    }
+}
+

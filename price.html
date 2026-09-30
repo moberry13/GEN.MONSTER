@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прайс-лист — gen.monster</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ШАПКА -->
+    <header class="header">
+        <a href="index.html" class="logo">GEN.MONSTER</a>
+        <nav class="nav">
+             <ul>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="price.html">Прайс-лист</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ЭКРАН 1: ЗАГОЛОВОК -->
+    <section class="screen screen-page-head">
+        <div class="screen-content">
+            <p class="label">Price list</p>
+            <h1>Прайс-лист</h1>
+            <p class="page-desc">
+                Актуальные цены на модели очков, оправы и дополнительные услуги.
+                Все цены указаны в рублях.
+            </p>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 2: ТАБЛИЦА -->
+    <section class="price">
+        <div class="price-wrapper">
+
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Категория</th>
+                        <th>Модель / Услуга</th>
+                        <th>Описание</th>
+                        <th class="price-col">Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Солнцезащитные -->
+                    <tr class="row-category">
+                        <td colspan="4">Солнцезащитные очки</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>—</td>
+                        <td>HER 01</td>
+                        <td>Классическая форма, металл</td>
+                        <td class="price-col">25 000 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>—</td>
+                        <td>LANG 01</td>
+                        <td>Прозрачный ацетат, футуризм</td>
+                        <td class="price-col">28 000 ₽</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>—</td>
+                        <td>DREAMER 17</td>
+                        <td>Оверсайз, затемнённые линзы</td>
+                        <td class="price-col">30 000 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>—</td>
+                        <td>POCKET 01</td>
+                        <td>Складная модель</td>
+                        <td class="price-col">32 000 ₽</td>
+                    </tr>
+
+                    <!-- Оптические -->
+                    <tr class="row-category">
+                        <td colspan="4">Оптические оправы</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>—</td>
+                        <td>MOONCUT 01</td>
+                        <td>Круглая форма, металл</td>
+                        <td class="price-col">22 000 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>—</td>
+                        <td>VIS VIVA 01</td>
+                        <td>Геометричная, титан</td>
+                        <td class="price-col">24 000 ₽</td>
+                    </tr>
+
+                    <!-- Доп. услуги -->
+                    <tr class="row-category row-services">
+                        <td colspan="4">Дополнительные услуги</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>Услуга</td>
+                        <td>Замена линз</td>
+                        <td>Установка новых линз</td>
+                        <td class="price-col">5 000 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>Услуга</td>
+                        <td>Ремонт оправы</td>
+                        <td>Пайка, замена деталей</td>
+                        <td class="price-col">3 000 ₽</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>Услуга</td>
+                        <td>Настройка оправы</td>
+                        <td>Подгонка по размеру</td>
+                        <td class="price-col">1 500 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>Аксессуар</td>
+                        <td>Чехол</td>
+                        <td>Фирменный жёсткий чехол</td>
+                        <td class="price-col">2 000 ₽</td>
+                    </tr>
+                    <tr class="row-odd">
+                        <td>Аксессуар</td>
+                        <td>Салфетка</td>
+                        <td>Микрофибра, фирменная</td>
+                        <td class="price-col">500 ₽</td>
+                    </tr>
+                    <tr class="row-even">
+                        <td>Аксессуар</td>
+                        <td>Подарочная упаковка</td>
+                        <td>Крафт-бокс + лента</td>
+                        <td class="price-col">1 000 ₽</td>
+                    </tr>
+
+                    <!-- Акция -->
+                    <tr class="row-promo">
+                        <td colspan="3">
+                            <strong>Акция:</strong> скидка 10% на вторую пару
+                        </td>
+                        <td class="price-col">−10%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <p class="price-note">
+                * Цены указаны без учёта доставки. Актуально на 2026 год.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ЭКРАН 3: ФИНАЛ + ПОДВАЛ -->
+    <section class="screen screen-final">
+        <div class="screen-content centered">
+            <h2>
+                Остались<br>
+                вопросы?
+            </h2>
+            <a href="about.html" class="link-arrow">Связаться с нами →</a>
+        </div>
+        <footer class="footer">
+            <div class="footer-brand">gen.monster</div>
+           <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="price.html">Прайс-лист</a></li>
+                </ul>
+            </nav>
+            <div class="footer-copy">© 2026</div>
+        </footer>
+    </section>
+
+</body>
+</html>
