@@ -416,46 +416,62 @@ em {
     color: var(--ink);
 }
 
-/* ===== АДАПТИВ ===== */
 @media (max-width: 900px) {
     .header {
-        padding: 25px 30px;
+        padding: 20px 25px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
-    .nav {
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .nav ul {
         gap: 20px;
     }
+
     .nav a {
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 1px;
     }
+
     .screen {
         padding: 100px 30px;
     }
+
     .screen-hero h1 {
         font-size: 44px;
     }
+
     .screen-about h2 {
         font-size: 32px;
     }
+
     .screen-final h2 {
         font-size: 38px;
     }
+
     .numbers-grid {
         grid-template-columns: 1fr;
         gap: 50px;
     }
+
     .number-value {
         font-size: 64px;
     }
+
     .feature-row {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .footer {
         flex-direction: column;
         gap: 25px;
     }
 }
-
 /* ===== СТРАНИЦА «О КОМПАНИИ» ===== */
 
 /* Заголовок страницы */
@@ -764,3 +780,55 @@ em {
     }
 }
 
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 18px;
+    }
+
+    .logo {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .nav ul {
+        gap: 12px;
+    }
+
+    .nav a {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .screen {
+        padding: 90px 20px 60px;
+    }
+
+    .screen-hero h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .screen-about h2 {
+        font-size: 24px;
+    }
+
+    .screen-page-head h1 {
+        font-size: 38px;
+    }
+
+    .screen-final h2 {
+        font-size: 28px;
+    }
+
+    .number-value {
+        font-size: 48px;
+    }
+
+    .map-overlay {
+        padding: 30px 25px;
+    }
+
+    .map-overlay h2 {
+        font-size: 22px;
+    }
+}
