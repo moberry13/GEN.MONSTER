@@ -339,13 +339,16 @@ em {
 }
 
 .map-overlay {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
     z-index: 2;
-    text-align: center;
-    padding: 60px 80px;
+    text-align: left;
+    padding: 50px 60px;
     background-color: rgba(247, 246, 243, 0.92);
     backdrop-filter: blur(15px);
-    max-width: 500px;
+    max-width: 420px;
 }
 
 .map-overlay h2 {
