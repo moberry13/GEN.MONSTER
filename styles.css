@@ -170,7 +170,7 @@ em {
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(245, 245, 247, 0.4);
+    background: rgba(245, 245, 247, 0.25);
     z-index: 1;
 }
 
