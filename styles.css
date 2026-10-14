@@ -49,7 +49,6 @@ a:active {
     color: var(--ink);
 }
 
-/* Навигация: обычная и посещённая совпадают */
 .nav a:link,
 .nav a:visited,
 .footer-nav a:link,
@@ -152,7 +151,6 @@ em {
     inset: 0;
     z-index: 1;
     overflow: hidden;
-
 }
 
 .screen-bg img,
@@ -181,6 +179,10 @@ em {
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 35px;
+}
+
+.label-light {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* ===== ССЫЛКА СО СТРЕЛКОЙ ===== */
@@ -333,7 +335,7 @@ em {
 }
 
 .feature-row:last-child {
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e0e3e8;
 }
 
 .feature-num {
@@ -436,9 +438,8 @@ em {
 .footer-nav a:hover {
     color: var(--ink);
 }
-/* ===== СТРАНИЦА «О КОМПАНИИ» ===== */
 
-/* Заголовок страницы */
+/* ===== СТРАНИЦА «О КОМПАНИИ» ===== */
 .screen-page-head {
     min-height: 60vh;
     padding-top: 180px;
@@ -460,12 +461,6 @@ em {
     line-height: 1.8;
 }
 
-/* Светлый label (для тёмного фона) */
-.label-light {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Сетка показателей — 3 колонки */
 .screen-numbers .numbers-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 80px 60px;
@@ -519,26 +514,7 @@ em {
     color: var(--accent);
 }
 
-/* ===== АДАПТИВ для about.html ===== */
-@media (max-width: 900px) {
-    .screen-page-head h1 {
-        font-size: 52px;
-        letter-spacing: -2px;
-    }
-    .screen-contacts h2 {
-        font-size: 32px;
-    }
-    .contacts-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-    .screen-numbers .numbers-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 /* ===== СТРАНИЦА КАТАЛОГ ===== */
-
 .catalog {
     padding: 80px 70px 140px;
     background-color: var(--bg);
@@ -578,17 +554,6 @@ em {
 
 .product:hover .product-image {
     transform: scale(1.02);
-}
-
-.product:hover .product-image {
-    transform: scale(1.02);
-}
-
-.product-placeholder {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
 }
 
 .product-info {
@@ -632,19 +597,7 @@ em {
     letter-spacing: 0.5px;
 }
 
-/* ===== АДАПТИВ ===== */
-@media (max-width: 900px) {
-    .catalog {
-        padding: 60px 30px 100px;
-    }
-    .catalog-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-}
-
 /* ===== СТРАНИЦА ПРАЙС-ЛИСТ ===== */
-
 .price {
     padding: 60px 70px 140px;
     background-color: var(--bg);
@@ -661,7 +614,6 @@ em {
     font-size: 14px;
 }
 
-/* Шапка таблицы */
 .price-table thead th {
     background-color: #0a0a0a;
     color: #ffffff;
@@ -678,7 +630,6 @@ em {
     white-space: nowrap;
 }
 
-/* Заголовки категорий */
 .row-category td {
     background-color: #d8dee5;
     color: #0a0a0a;
@@ -693,7 +644,6 @@ em {
     background-color: #a8b8c8;
 }
 
-/* Обычные строки */
 .price-table tbody td {
     padding: 20px 24px;
     border-bottom: 1px solid #e0e3e8;
@@ -708,7 +658,6 @@ em {
     background-color: #ffffff;
 }
 
-/* Акция */
 .row-promo td {
     background-color: #0a0a0a;
     color: #a8b8c8;
@@ -723,7 +672,6 @@ em {
     color: #a8b8c8;
 }
 
-/* Примечание */
 .price-note {
     margin-top: 25px;
     font-size: 12px;
@@ -732,29 +680,170 @@ em {
     text-align: right;
 }
 
-/* Hover по строкам */
 .price-table tbody tr:not(.row-category):not(.row-promo):hover td {
     background-color: #eef1f5;
 }
 
-/* ===== АДАПТИВ ===== */
+/* ===== БУРГЕР-МЕНЮ ===== */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+}
+
+.burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--ink);
+    transition: all 0.3s;
+}
+
+.burger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== ПЛАНШЕТ (max-width: 900px) ===== */
 @media (max-width: 900px) {
+    .header {
+        padding: 20px 25px;
+    }
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    /* Показываем бургер */
+    .burger {
+        display: flex;
+    }
+
+    /* Меню — выезжает справа */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: #f5f5f7;
+        padding: 100px 40px 40px;
+        transition: right 0.4s ease;
+        z-index: 105;
+        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nav a {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .screen {
+        padding: 100px 30px;
+    }
+
+    .screen-hero h1 {
+        font-size: 44px;
+    }
+
+    .screen-about h2 {
+        font-size: 32px;
+    }
+
+    .screen-final h2 {
+        font-size: 38px;
+    }
+
+    .screen-page-head h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .screen-contacts h2 {
+        font-size: 32px;
+    }
+
+    .contacts-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .numbers-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .screen-numbers .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .number-value {
+        font-size: 64px;
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .catalog {
+        padding: 60px 30px 100px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
     .price {
         padding: 40px 20px 100px;
     }
+
     .price-table {
         font-size: 12px;
     }
+
     .price-table thead th,
     .price-table tbody td {
         padding: 14px 12px;
     }
+
     .price-table thead th:nth-child(3),
     .price-table tbody td:nth-child(3) {
         display: none;
     }
 }
 
+/* ===== ТЕЛЕФОН (max-width: 600px) ===== */
 @media (max-width: 600px) {
     .header {
         padding: 15px 18px;
@@ -763,15 +852,6 @@ em {
     .logo {
         font-size: 10px;
         letter-spacing: 3px;
-    }
-
-    .nav ul {
-        gap: 12px;
-    }
-
-    .nav a {
-        font-size: 8px;
-        letter-spacing: 1px;
     }
 
     .screen {
@@ -805,80 +885,5 @@ em {
 
     .map-overlay h2 {
         font-size: 22px;
-    }
-}
-/* ===== БУРГЕР-МЕНЮ ===== */
-
-/* Кнопка скрыта на широких экранах */
-.burger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 110;
-}
-
-.burger span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--ink);
-    transition: all 0.3s;
-}
-
-/* Анимация крестика при открытии */
-.burger.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.burger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* ===== МОБИЛЬНОЕ МЕНЮ ===== */
-@media (max-width: 900px) {
-
-    /* Показываем бургер */
-    .burger {
-        display: flex;
-    }
-
-    /* Прячем обычное меню */
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background-color: #f5f5f7;
-        padding: 100px 40px 40px;
-        transition: right 0.4s ease;
-        z-index: 105;
-        box-shadow: -20px 0 60px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Открытое меню */
-    .nav.active {
-        right: 0;
-    }
-
-    /* Меню — вертикальное */
-    .nav ul {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .nav a {
-        font-size: 14px;
-        letter-spacing: 2px;
     }
 }
