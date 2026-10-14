@@ -1,0 +1,181 @@
+/* ===== РЕЖИМ ДЛЯ СЛАБОВИДЯЩИХ ===== */
+
+body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+    font-weight: 400 !important;
+}
+
+/* Скрываем всё лишнее */
+.header,
+.burger,
+.footer,
+.nav,
+.footer-nav,
+.screen-bg,
+.screen-map,
+.scroll-hint,
+.overlay,
+.link-arrow,
+.map-overlay,
+.image-caption {
+    display: none !important;
+}
+
+/* Каждый экран — компактно */
+.screen {
+    min-height: auto !important;
+    padding: 40px 30px !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.screen-content {
+    max-width: 100% !important;
+}
+
+/* Заголовки — крупнее, чёрные */
+h1, h2, h3 {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+h1 { font-size: 36px !important; }
+h2 { font-size: 28px !important; }
+h3 { font-size: 22px !important; }
+
+/* Тексты — крупные, чёрные */
+p, span, li, td, th {
+    color: #000000 !important;
+    font-size: 18px !important;
+}
+
+/* Ссылки — подчёркнуты, чёрные */
+a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+/* Каталог — сетка в 2 колонки, крупнее */
+.catalog {
+    padding: 30px 20px !important;
+    background: #ffffff !important;
+}
+
+.catalog-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+}
+
+.product-image {
+    background: #ffffff !important;
+    border: 2px solid #000 !important;
+}
+
+.product-image img {
+    filter: grayscale(100%) !important;
+}
+
+.product h3 {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+.product-desc,
+.product-specs li {
+    color: #000000 !important;
+    font-size: 16px !important;
+}
+
+.product-specs {
+    border-top: 2px solid #000 !important;
+}
+
+/* Прайс-таблица — чёткая ч/б */
+.price {
+    padding: 30px 20px !important;
+    background: #ffffff !important;
+}
+
+.price-table {
+    border: 2px solid #000 !important;
+    font-size: 16px !important;
+}
+
+.price-table thead th {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000 !important;
+    padding: 12px !important;
+    font-weight: 700 !important;
+}
+
+.price-table tbody td {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000 !important;
+    padding: 12px !important;
+}
+
+.row-category td,
+.row-services td {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    border: 2px solid #000 !important;
+}
+
+.row-promo td {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px dashed #000 !important;
+    font-weight: 700 !important;
+}
+
+.price-note {
+    color: #000000 !important;
+    font-size: 14px !important;
+}
+
+/* Показатели цифрами — крупно, ч/б */
+.number-value {
+    color: #000000 !important;
+    font-size: 64px !important;
+    font-weight: 700 !important;
+}
+
+.number-label {
+    color: #000000 !important;
+    font-size: 16px !important;
+}
+
+/* Контакты — ч/б */
+.screen-contacts {
+    background: #ffffff !important;
+}
+
+.contacts-grid {
+    border-top: 2px solid #000 !important;
+}
+
+.contact-label {
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+.contact-item p {
+    font-size: 18px !important;
+    color: #000000 !important;
+}
+
+/* Убираем декор */
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+    background-image: none !important;
+}
