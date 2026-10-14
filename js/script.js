@@ -20,3 +20,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+// ===== КНОПКА ПРИНТЕРА =====
+
+document.addEventListener('DOMContentLoaded', function () {
+    const printBtn = document.getElementById('print-toggle');
+    const styleLink = document.querySelector('link[rel="stylesheet"]');
+
+    let isPrintMode = false;
+
+    if (printBtn && styleLink) {
+        printBtn.addEventListener('click', function () {
+            if (!isPrintMode) {
+                // Включаем режим для слабовидящих
+                styleLink.setAttribute('href', 'print.css');
+                isPrintMode = true;
+                printBtn.textContent = '✖';
+
+                // Открываем окно печати
+                setTimeout(function () {
+                    window.print();
+                }, 300);
+            } else {
+                // Выключаем режим
+                styleLink.setAttribute('href', 'styles.css');
+                isPrintMode = false;
+                printBtn.textContent = '🖨';
+            }
+        });
+    }
+});
