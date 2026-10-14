@@ -1033,3 +1033,24 @@ em {
         border-radius: 0 !important;
     }
 }
+/* ===== КНОПКА ПРИНТЕРА ===== */
+.print-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 15px;
+    transition: transform 0.3s;
+    color: var(--ink);
+}
+
+.print-toggle:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    .print-toggle {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+}
