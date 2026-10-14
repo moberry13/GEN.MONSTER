@@ -887,3 +887,149 @@ em {
         font-size: 22px;
     }
 }
+/* ===== ВЕРСИЯ ДЛЯ ПЕЧАТИ (Ctrl+P) ===== */
+@media print {
+
+    /* Скрываем всё лишнее */
+    .header,
+    .burger,
+    .footer,
+    .nav,
+    .footer-nav,
+    .screen-bg,
+    .screen-map,
+    .scroll-hint,
+    .overlay,
+    .link-arrow,
+    .map-overlay,
+    .image-caption {
+        display: none !important;
+    }
+
+    /* Общий фон — белый, текст — чёрный */
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    /* Каждый экран — компактно, без 100vh */
+    .screen {
+        min-height: auto !important;
+        padding: 20px 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .screen-content {
+        max-width: 100% !important;
+    }
+
+    /* Заголовки — чёрные */
+    h1, h2, h3 {
+        color: #000000 !important;
+        page-break-after: avoid;
+    }
+
+    /* Тексты — обычные */
+    p, span, li, td, th {
+        color: #000000 !important;
+    }
+
+    /* Ссылки — без подчёркивания, чёрные */
+    a {
+        color: #000000 !important;
+        text-decoration: none !important;
+    }
+
+    /* Каталог — сетка в 3 колонки */
+    .catalog {
+        padding: 20px 0 !important;
+    }
+
+    .catalog-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .product-image {
+        background: none !important;
+        aspect-ratio: auto !important;
+        margin-bottom: 10px !important;
+    }
+
+    .product-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 200px;
+        object-fit: contain !important;
+    }
+
+    .product h3 {
+        font-size: 14pt !important;
+    }
+
+    /* Прайс-таблица — чёткая ч/б */
+    .price-table {
+        border: 1px solid #000 !important;
+        font-size: 11pt !important;
+    }
+
+    .price-table thead th {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #000 !important;
+        padding: 8px !important;
+    }
+
+    .price-table tbody td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #000 !important;
+        padding: 8px !important;
+    }
+
+    /* Категории — тоже ч/б с жирным */
+    .row-category td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        border: 1px solid #000 !important;
+    }
+
+    /* Акция — рамка вместо тёмного фона */
+    .row-promo td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #000 !important;
+        font-weight: bold !important;
+    }
+
+    /* Показатели цифрами — крупно, но ч/б */
+    .number-value {
+        color: #000000 !important;
+        font-size: 32pt !important;
+    }
+
+    .number-label {
+        color: #000000 !important;
+    }
+
+    /* Контакты — все ч/б */
+    .contacts-grid {
+        border-top: 1px solid #000 !important;
+    }
+
+    .contact-label {
+        color: #000000 !important;
+        font-weight: bold !important;
+    }
+
+    /* Убираем тени и скругления */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border-radius: 0 !important;
+    }
+}
