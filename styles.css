@@ -1071,18 +1071,17 @@ em {
 }
 
 .filters {
-    width: 260px; /* Чуть шире, чтобы влезло */
-    flex-shrink: 0; /* Запрещаем сжиматься */
+    width: 260px;
+    flex-shrink: 0;
     background: #ffffff;
     padding: 30px;
     border-radius: 4px;
+
+    position: sticky; 
+    top: 100px; 
     
-    /* Убираем sticky, делаем обычный блок в потоке */
-    position: relative; 
-    
-    /* Добавим легкую рамку или тень, чтобы было аккуратно */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    align-self: flex-start; /* Прижимаем к верху */
+    align-self: flex-start;
 }
 
 /* Убираем точки у списков внутри фильтра */
@@ -1090,6 +1089,16 @@ em {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--muted);
 }
 
 /* Стили для кнопки сброса, чтобы она не была страшной */
