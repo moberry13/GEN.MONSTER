@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 // ===== УМНЫЙ ФИЛЬТР (Лаба 3) =====
+// ===== УМНЫЙ ФИЛЬТР (Лаба 3) =====
 document.addEventListener('DOMContentLoaded', function () {
     const catalog = document.getElementById('elements');
     const filtersContainer = document.getElementById('filters');
