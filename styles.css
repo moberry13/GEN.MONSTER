@@ -1061,3 +1061,93 @@ em {
         font-size: 16px;
     }
 }
+/* ===== ФИЛЬТР (Лаба 3) ===== */
+.catalog-layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.filters {
+    width: 250px;
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    position: sticky;
+    top: 120px;
+}
+
+.filters h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 25px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filters h3:first-child {
+    margin-top: 0;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.filter-group label:hover {
+    color: var(--ink);
+}
+
+.filter-group input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+}
+
+.filter-group label.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+}
+
+.catalog-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки, так как фильтр съел место */
+    gap: 40px;
+}
+
+/* Чтобы на экране 3 колонки, если фильтр не нужен */
+@media (min-width: 1400px) {
+    .catalog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .catalog-layout {
+        flex-direction: column;
+    }
+    .filters {
+        width: 100%;
+        position: static;
+    }
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}
